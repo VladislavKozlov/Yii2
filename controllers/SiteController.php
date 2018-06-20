@@ -3,6 +3,8 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\Books;
+use app\models\Authors;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
@@ -54,15 +56,22 @@ class SiteController extends Controller
         ];
     }
 
-    /**
+     /**
      * Displays homepage.
      *
      * @return string
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $dataBooks = Books::getAll();
+		$dataAuthors = Authors::getAll();
+		
+		return $this->render('index', [
+            'dataBooks' => $dataBooks,
+			'dataAuthors' => $dataAuthors
+        ]);
     }
+
 
     /**
      * Login action.
@@ -77,7 +86,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return Yii::$app->response->redirect(['/admin/index']);
         }
 
         $model->password = '';
