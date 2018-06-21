@@ -10,6 +10,7 @@ $this->title = 'My Yii Application';
         <p class="lead">List Authors with books</p>
 
     <div class="body-content">
+	
 
         <div class="row">
            
