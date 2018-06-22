@@ -9,7 +9,7 @@ use Yii;
  *
  * @property int $id
  * @property string $name
- * @property int $author
+ * @property int $author_id
 
  * @property Authors $authors
  */
@@ -36,7 +36,7 @@ class Books extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'author'], 'required'],
+            [['name', 'author_id'], 'required'],
             [['name'], 'string', 'max' => 100]
         ];
     }
@@ -51,15 +51,15 @@ class Books extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'author' => 'Author',
+            'id' => 'id',
+            'name' => 'name',
+            'author_id' => 'author_id',
         ];
     }
 
     public function getAuthors()
     {
-        return $this->hasOne(Authors::className(), ['id' => 'author']);
+        return $this->hasOne(Authors::className(), ['id' => 'author_id']);
     }
 
     public static function findIdentity($id)

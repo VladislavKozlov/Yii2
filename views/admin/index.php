@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <a href="<?=Url::toRoute(['/authors/index']);?>" >Authors</a>
             </div>
             <div class="panel-body">
-            REST API
+            <a href="<?=Url::toRoute(['/rest/index']);?>" >REST API</a>
             </div>
         </div>
 

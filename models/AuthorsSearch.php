@@ -65,4 +65,5 @@ class AuthorsSearch extends Authors
 
         return $dataProvider;
     }
+	
 }

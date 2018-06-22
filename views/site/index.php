@@ -32,7 +32,7 @@ $this->title = 'My Yii Application';
                   <td><?php echo htmlspecialchars($item->name) ?></td>
 				  
 				  <?php foreach ($dataAuthors as $itemAuthor): 
-					if($itemAuthor->id == $item->author): ?>
+					if($itemAuthor->id == $item->author_id): ?>
 					
 					<td><?php echo htmlspecialchars($itemAuthor->name) ?></td>
 					 

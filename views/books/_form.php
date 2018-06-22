@@ -25,7 +25,7 @@ use yii\jui\DatePicker;
 
 	<?= $form->field($model, 'name')->textInput() ?>
 
-    <?= $form->field($model, 'author')->dropDownList($authorsItems) ?>
+    <?= $form->field($model, 'author_id')->dropDownList($authorsItems) ?>
 
     </div>
 
