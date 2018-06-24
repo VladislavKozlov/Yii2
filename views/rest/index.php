@@ -3,7 +3,7 @@ use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 
-$this->title = 'Yii Application';
+$this->title = 'REST API';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-index">
@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
      		<th scope="row"><a href="<?php echo('http://'.$_SERVER['HTTP_HOST'].'/yii2basic/api/v1/books/list'); ?> " >GET /yii2basic/api/v1/books/list</a></th>
                 </tr>
                 <tr>
-                  <th scope="row"><a href="<?php echo('http://'.$_SERVER['HTTP_HOST'].'/yii2basic/api/v1/books/1'); ?> " >GET /yii2basic/api/v1/books/1</th>
+            <th scope="row"><a href="<?php echo('http://'.$_SERVER['HTTP_HOST'].'/yii2basic/api/v1/books/1'); ?> " >GET /yii2basic/api/v1/books/1</a></th>
                 </tr>
                 <tr>
                   <th scope="row">POST /yii2basic/api/v1/books/update/1</th>

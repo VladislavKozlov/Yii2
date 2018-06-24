@@ -46,13 +46,13 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'name',
+            'name:ntext',
             [
-                'attribute'=>'name',
                 'label'=>'author',
                 'format'=>'text', 
                 'value' => 'authors.name'
             ],
+			'author_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

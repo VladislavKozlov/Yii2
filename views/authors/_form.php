@@ -9,7 +9,7 @@ use app\models\Books;
 
 
 $books = Books::find()->all();
-$booksItems = ArrayHelper::map($books,'id','name','author');
+$booksItems = ArrayHelper::map($books,'id','name','author_id');
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Authors */

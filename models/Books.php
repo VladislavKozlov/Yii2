@@ -36,7 +36,7 @@ class Books extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'author_id'], 'required'],
+            [['name','author_id'], 'required'],
             [['name'], 'string', 'max' => 100]
         ];
     }
@@ -53,7 +53,7 @@ class Books extends \yii\db\ActiveRecord
         return [
             'id' => 'id',
             'name' => 'name',
-            'author_id' => 'author_id',
+            'author_id' => 'author_id'
         ];
     }
 

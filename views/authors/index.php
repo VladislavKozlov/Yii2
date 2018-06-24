@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
 use app\models\Books;
+use app\models\Authors;
 use yii\helpers\Url;
 
 
@@ -49,9 +50,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name:ntext',
+			[
+				'label'=>'count books',
+                'format'=>'integer', 
+				'value' => function ($data) {
+					$author_id = $data->id;
+                   return Authors::countBooks($author_id);
+                },
+            ],
             
-
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn']
         ],
     ]); ?>
     

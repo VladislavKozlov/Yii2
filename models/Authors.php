@@ -30,13 +30,21 @@ class Authors extends \yii\db\ActiveRecord
         return $data;
     }
 	
-    public function relations()
+	//count Books for authors
+	public static function countBooks($id)
     {
-        return array(
-            'booksCount'=>array(self::STAT, 'Books', 'id'),
-        );
+		$dataBooksAuthorId = Books::find()->select('author_id')->all();
+		$count = 0;
+		foreach ($dataBooksAuthorId as $item)
+		{
+			if($item->author_id == $id)
+			{
+				$count++;
+			}
+   		}
+		return $count;
     }
-
+	
     public function validate($attributes=null, $clearErrors=true)
     {
         return true;
@@ -64,9 +72,9 @@ class Authors extends \yii\db\ActiveRecord
         ];
     }
 
-    public function getBook()
+    public function getBooks()
     {
-        return $this->hasMany(Books::className(), ['author' => 'id']);
+        return $this->hasMany(Books::className(), ['author_id' => 'id']);
     }
 	
 }

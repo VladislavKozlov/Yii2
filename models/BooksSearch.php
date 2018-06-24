@@ -19,6 +19,7 @@ class BooksSearch extends Books
     {
         return [
             [['id', 'author_id'], 'integer'],
+			[['name'], 'safe']
         ];
     }
 
@@ -55,12 +56,13 @@ class BooksSearch extends Books
             return $dataProvider;
         }
 
-        // grid filtering conditions
+        //grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'name' => $this->name,
-            'author_id' => $this->author_id,
+            'author_id' => $this->author_id
         ]);
+		
+		$query->andFilterWhere(['like', 'name', $this->name]);
 
         return $dataProvider;
     }
